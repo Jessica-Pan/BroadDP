@@ -29,10 +29,10 @@ const NavBar = () => {
             <a href="/compounds">Compounds Only</a>
           </li>
           <li>
-            <a href="anti-anti.html">Antibiotic-Antibiotic</a>
+            <a href="/antibiotic-antibiotic">Antibiotic-Antibiotic</a>
           </li>
           <li>
-            <a href="antibiotic.html">Antibiotics Only</a>
+            <a href="/antibiotics-only">Antibiotics Only</a>
           </li>
         </ul>
       </nav>
