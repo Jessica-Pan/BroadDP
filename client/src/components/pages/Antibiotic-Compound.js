@@ -73,6 +73,7 @@ const AntibioticCompound = () => {
           <div className="single-plot">Antibiotics</div>
         </article>
       </section>
+      <br />
     </div>
   );
 };
