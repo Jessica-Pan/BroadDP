@@ -26,7 +26,7 @@ const NavBar = () => {
             <a href="/antibiotic-compound">Anitbiotic-Compund</a>
           </li>
           <li>
-            <a href="compounds.html">Compounds Only</a>
+            <a href="/compounds">Compounds Only</a>
           </li>
           <li>
             <a href="anti-anti.html">Antibiotic-Antibiotic</a>
