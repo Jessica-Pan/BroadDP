@@ -1,18 +1,6 @@
 const fs = require("fs");
 const net = require("net");
 
-/**
- * Provides some basic checks to make sure you've
- * correctly set up your repository.
- *
- * You normally shouldn't need to modify this file.
- *
- * Curent checks:
- * - node_modules exists
- * - makes sure 'npx webpack' was called if required
- * - warns if visiting port 3000 while running hot reloader
- */
-
 class NodeSetupError extends Error {}
 let routeChecked = false;
 
