@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import NavBar from "../modules/NavBar";
+import VolcanoPlot from "../modules/VolcanoPlot";
 
 import "./About.css";
 
@@ -59,7 +60,7 @@ class AntibioticCompoundMain extends Component {
         <br />
         <section>
           <article className="home-plot-section">
-            <div className="single-plot">KP1</div>
+            <div className="single-plot"><VolcanoPlot strain="KP1"/> </div>
             <div className="single-plot">Volcano Plot</div>
             <div className="single-plot">Volcano Plot</div>
             <div className="single-plot">Volcano Plot</div>
