@@ -7,19 +7,17 @@ class AntibioticCompoundMain extends Component {
   constructor(props) {
     super(props);
     // Initialize Default State
-    this.state = {
-      mainContent: "Loading...",
-      showingIndex: 1,
-      feelings: this.props.feelings,
-      allFeelings: [],
-      feeling_ids: [],
-    };
+    // this.state = {
+    //   mainContent: "Loading...",
+    //   showingIndex: 1,
+    //   feelings: this.props.feelings,
+    //   allFeelings: [],
+    //   feeling_ids: [],
+    // };
   }
 
   componentDidMount() {
-    console.log("getting the feelings");
-    this.getAllPastFeelings();
-    this.showYourTags();
+    console.log("mounting");
   }
   
   render() { 
@@ -58,11 +56,10 @@ class AntibioticCompoundMain extends Component {
             </form>
           </article>
         </section>
-        // here
         <br />
         <section>
           <article className="home-plot-section">
-            <div className="single-plot">KP1 <div></div></div>
+            <div className="single-plot">KP1</div>
             <div className="single-plot">Volcano Plot</div>
             <div className="single-plot">Volcano Plot</div>
             <div className="single-plot">Volcano Plot</div>
