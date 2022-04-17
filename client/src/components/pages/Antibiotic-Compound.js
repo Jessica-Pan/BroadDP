@@ -1,12 +1,19 @@
 import React, { Component, useEffect, useState } from "react";
 import NavBar from "../modules/NavBar";
-import VolcanoPlot from "../modules/VolcanoPlot";
+import ACVolcanoPlot from "../modules/ACVolcanoPlot";
 
 import "./About.css";
+import AntibioticCompoundSpecific from "./Antibiotic-Compound-Specific";
 
 class AntibioticCompoundMain extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      displayingCompound: false,
+      compound: "",
+      antibiotic: "",
+    };
+    this.displayAntibioticCompoundFunction = this.displayAntibioticCompound.bind(this);
     // Initialize Default State
     // this.state = {
     //   mainContent: "Loading...",
@@ -17,11 +24,28 @@ class AntibioticCompoundMain extends Component {
     // };
   }
 
-  componentDidMount() {
-    console.log("mounting");
+  // componentDidMount() {
+  //   console.log("mounting");
+  // }
+
+  displayAntibioticCompound(antibiotic, compound){
+    console.log("running this")
+    this.setState({
+      displayingCompound: true,
+      compound: compound,
+      antibiotic: antibiotic
+    });
+    this.forceUpdate();
+    // componentDidMount()
   }
   
   render() { 
+    console.log("rendering");
+    console.log("the state: " + this.state.displayingCompound);
+    if(this.state.displayingCompound){
+      return <div> <AntibioticCompoundSpecific antibiotic={this.state.antibiotic} compound={this.state.compound} /></div>
+    }
+
     return (
     <div> 
       <NavBar />  
@@ -60,7 +84,7 @@ class AntibioticCompoundMain extends Component {
         <br />
         <section>
           <article className="home-plot-section">
-            <div className="single-plot"><VolcanoPlot strain="KP1"/> </div>
+            <div className="single-plot"><ACVolcanoPlot strain="KP1" displayAntibioticCompound={this.displayAntibioticCompoundFunction}/> </div>
             <div className="single-plot">Volcano Plot</div>
             <div className="single-plot">Volcano Plot</div>
             <div className="single-plot">Volcano Plot</div>

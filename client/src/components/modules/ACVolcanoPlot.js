@@ -2,10 +2,17 @@ import React, { Component, useEffect, useState } from "react";
 import { navigate, useNavigate } from "@reach/router";
 import CanvasJSReact from './canvasjs.react';
 
-class VolcanoPlot extends Component {
+class ACVolcanoPlot extends Component {
     constructor(props){
         super(props);
         this.strain = this.props.strain;
+		this.displayAntibioticCompound = this.props.displayAntibioticCompound;
+    }
+
+    getURL(antibiotic, compound){
+        const currURL = window.location.href;
+        const withoutSuffix = currURL.substring(0, currURL.lastIndexOf("/"));
+        return withoutSuffix + `/antibiotic-compound-specific?antibiotic=${antibiotic}&compound=${compound}`
     }
 
     getPlotOptions() {
@@ -14,24 +21,23 @@ class VolcanoPlot extends Component {
 			theme: "light2",
 			animationEnabled: true,
 			title: {
-				text: "Active Users vs Server CPU Utilization"
+				text: "KP 43816"
 			},
 			axisX: {
-				title: "Active Users"
+				title: "Bliss Sum"
 			},
 			axisY: {
-				title: "CPU Utilization",
-				suffix: "%"
+				title: "Log 10 p-value"
 			},
 			data: [{
 				type: "scatter",
-				name: "Server 1",
+				name: "ANTIBIOTIC-COMPOUND",
 				markerType: "circle",
                 markerColor: "blue",
                 itemclick: console.log("clicked!! "),
-				toolTipContent: "<span style=\"color:#4F81BC \">{name}</span><br>Active Users: {x}<br>CPU Utilization: {y}%",
+				toolTipContent: "<span style=\"color:#4F81BC \">{name}</span><br> Click to see more details.%",
 				dataPoints: [
-					{ x: 100, y: 10 },
+					{ x: 100, y: 10, click: () =>  this.displayAntibioticCompound("anti", "comp") },
 					{ x: 150, y: 15 },
 					{ x: 190, y: 17 },
 					{ x: 250, y: 19 },
@@ -68,4 +74,4 @@ class VolcanoPlot extends Component {
     }
 } 
 
-export default VolcanoPlot;
+export default ACVolcanoPlot;
